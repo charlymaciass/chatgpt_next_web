@@ -36,7 +36,7 @@ jobs:
         uses: docker/metadata-action@v5.5.1
         with:
           images: |
-            my-docker-hub-namespace/my-docker-hub-repository
+            charlymaciass/chatgpt-next-web
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest
