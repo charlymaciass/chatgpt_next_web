@@ -7,6 +7,8 @@ import React, {
   useCallback,
   Fragment,
   RefObject,
+  props,
+  accessStore.defaultModel,
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
@@ -1424,7 +1426,7 @@ function _Chat() {
                       defaultShow={i >= messages.length - 6}
                     />
                     {getMessageImages(message).length == 1 && (
-                      <img
+                      <image
                         className={styles["chat-message-item-image"]}
                         src={getMessageImages(message)[0]}
                         alt=""
@@ -1441,7 +1443,7 @@ function _Chat() {
                       >
                         {getMessageImages(message).map((image, index) => {
                           return (
-                            <img
+                            <image
                               className={
                                 styles["chat-message-item-image-multi"]
                               }
