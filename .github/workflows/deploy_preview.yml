@@ -23,7 +23,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@latest
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -33,7 +33,7 @@ jobs:
         id: extract_branch
 
       - name: Hash branch name
-        uses: pplanel/hash-calculator-action@v1.3.1
+        uses: pplanel/hash-calculator-action@latest
         id: hash_branch
         with:
           input: ${{ steps.extract_branch.outputs.branch }}
@@ -49,7 +49,7 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         id: cache-npm
         with:
           path: ~/.npm
