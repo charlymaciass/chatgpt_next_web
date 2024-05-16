@@ -7,7 +7,6 @@ import React, {
   useCallback,
   Fragment,
   RefObject,
-  props,
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
