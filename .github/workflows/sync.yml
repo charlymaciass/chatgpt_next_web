@@ -17,12 +17,12 @@ jobs:
     steps:
       # Step 1: run a standard checkout action
       - name: Checkout target repo
-        uses: actions/checkout@v4.1.4
+        uses: actions/checkout@latest
 
       # Step 2: run the sync action
       - name: Sync upstream changes
         id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        uses: aormsby/Fork-Sync-With-Upstream-action@latest
         with:
           upstream_sync_repo: ChatGPTNextWeb/ChatGPT-Next-Web
           upstream_sync_branch: main
