@@ -14,4 +14,3 @@ jobs:
           IS_MODIFY_TITLE: false
           CUSTOM_BOT_NOTE: Bot detected the issue body's language is not English, translate it automatically.
 
-            
