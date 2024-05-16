@@ -1424,7 +1424,7 @@ function _Chat() {
                       defaultShow={i >= messages.length - 6}
                     />
                     {getMessageImages(message).length == 1 && (
-                      <image
+                      <img
                         className={styles["chat-message-item-image"]}
                         src={getMessageImages(message)[0]}
                         alt=""
@@ -1441,7 +1441,7 @@ function _Chat() {
                       >
                         {getMessageImages(message).map((image, index) => {
                           return (
-                            <image
+                            <img
                               className={
                                 styles["chat-message-item-image-multi"]
                               }
