@@ -8,7 +8,7 @@ import React, {
   Fragment,
   RefObject,
   props,
-  accessStore.defaultModel,
+  "accessStore.defaultModel",
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
