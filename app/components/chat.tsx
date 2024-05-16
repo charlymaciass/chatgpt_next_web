@@ -9,7 +9,6 @@ import React, {
   Fragment,
   RefObject,
   props,
-  defaultModel,
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
