@@ -1,5 +1,5 @@
 import { useDebouncedCallback } from "use-debounce";
-import { accessStore.defaultModel } from "accessStore";
+import { defaultModel } from "accessStore";
 import React, {
   useState,
   useRef,
@@ -9,6 +9,7 @@ import React, {
   Fragment,
   RefObject,
   props,
+  defaultModel,
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
