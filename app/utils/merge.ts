@@ -1,7 +1,7 @@
 export function merge(target: any, source: any) {
   Object.keys(source).forEach(function (key) {
     if (
-      (source.hasOwnProperty(key) && // Check if the property is not inherited
+      (Object.prototype.hasOwnProperty.call(source, key) && // Check if the property is not inherited
         source[key] &&
         typeof source[key] === "object") ||
       key === "__proto__" ||
