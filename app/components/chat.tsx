@@ -487,7 +487,7 @@ export function ChatActions(props: {
       );
       showToast(nextModel);
     }
-  }, [chatStore, currentModel, models]);
+  }, [chatStore, currentModel, models, props]);
 
   return (
     <div className={styles["chat-input-actions"]}>
@@ -1428,6 +1428,7 @@ function _Chat() {
                         className={styles["chat-message-item-image"]}
                         src={getMessageImages(message)[0]}
                         alt=""
+                        loading="lazy"
                       />
                     )}
                     {getMessageImages(message).length > 1 && (
@@ -1448,6 +1449,7 @@ function _Chat() {
                               key={index}
                               src={image}
                               alt=""
+                              loading="lazy"
                             />
                           );
                         })}
