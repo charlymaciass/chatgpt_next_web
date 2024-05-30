@@ -8,11 +8,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-
 import SendWhiteIcon from "../icons/send-white.svg";
 import BrainIcon from "../icons/brain.svg";
-import RenameIcon from "../icons/rename.svg";
-import EditIcon from "../icons/rename.svg";
+import { EditIcon, RenameIcon } from "../icons/rename.svg";
 import ExportIcon from "../icons/share.svg";
 import ReturnIcon from "../icons/return.svg";
 import CopyIcon from "../icons/copy.svg";
@@ -30,14 +28,12 @@ import PinIcon from "../icons/pin.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
 import ImageIcon from "../icons/image.svg";
-
 import LightIcon from "../icons/light.svg";
 import DarkIcon from "../icons/dark.svg";
 import AutoIcon from "../icons/auto.svg";
 import BottomIcon from "../icons/bottom.svg";
 import StopIcon from "../icons/pause.svg";
 import RobotIcon from "../icons/robot.svg";
-
 import {
   BOT_HELLO,
   ChatMessage,
@@ -50,7 +46,6 @@ import {
   useAppConfig,
   useChatStore,
 } from "../store";
-
 import {
   autoGrowTextArea,
   copyToClipboard,
@@ -60,20 +55,14 @@ import {
   selectOrCopy,
   useMobileScreen,
 } from "../utils";
-
 import { compressImage } from "@/app/utils/chat";
-
 import dynamic from "next/dynamic";
-
 import Image from "next/image";
-
 import { ChatControllerPool } from "../client/controller";
 import { Prompt, usePromptStore } from "../store/prompt";
 import Locale from "../locales";
-
 import { IconButton } from "./button";
 import styles from "./chat.module.scss";
-
 import {
   List,
   ListItem,
@@ -1502,7 +1491,7 @@ function _Chat() {
           }}
         />
         <label
-          className={`${styles["chat-input-panel-inner"]} ${attachImages.length != 0 ? styles["chat-input-panel-inner-attach"] : ""}`}
+          className={`${styles["chat-input-panel-inner"]} ${attachImages.length !== 0 ? styles["chat-input-panel-inner-attach"] : ""}`}
           htmlFor="chat-input"
         >
           <textarea
