@@ -1,11 +1,10 @@
-import { Google, REQUEST_TIMEOUT_MS } from "@/app/constant";
+import { DEFAULT_API_HOST, Google, REQUEST_TIMEOUT_MS } from "@/app/constant";
 import { ChatOptions, getHeaders, LLMApi, LLMModel, LLMUsage } from "../api";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 import { getClientConfig } from "@/app/config/client";
-import { DEFAULT_API_HOST } from "@/app/constant";
 import {
-  getMessageTextContent,
   getMessageImages,
+  getMessageTextContent,
   isVisionModel,
 } from "@/app/utils";
 
@@ -19,6 +18,7 @@ export class GeminiProApi implements LLMApi {
       ""
     );
   }
+
   async chat(options: ChatOptions): Promise<void> {
     // const apiClient = this;
     let multimodal = false;
@@ -79,8 +79,7 @@ export class GeminiProApi implements LLMApi {
         // ],
         temperature: modelConfig.temperature,
         maxOutputTokens: modelConfig.max_tokens,
-        topP: modelConfig.top_p,
-        // "topK": modelConfig.top_k,
+        topP: modelConfig.top_p, // "topK": modelConfig.top_k,
       },
       safetySettings: [
         {
@@ -120,7 +119,7 @@ export class GeminiProApi implements LLMApi {
 
       if (!baseUrl) {
         baseUrl = isApp
-          ? DEFAULT_API_HOST + "/api/proxy/google/" + Google.ChatPath(modelConfig.model)
+          ? `${DEFAULT_API_HOST}/api/proxy/google/${Google.ChatPath(modelConfig.model)}`
           : this.path(Google.ChatPath(modelConfig.model));
       }
 
@@ -139,7 +138,7 @@ export class GeminiProApi implements LLMApi {
         () => controller.abort(),
         REQUEST_TIMEOUT_MS,
       );
-      
+
       if (shouldStream) {
         let responseText = "";
         let remainText = "";
@@ -260,12 +259,15 @@ export class GeminiProApi implements LLMApi {
       options.onError?.(e as Error);
     }
   }
+
   usage(): Promise<LLMUsage> {
     throw new Error("Method not implemented.");
   }
+
   async models(): Promise<LLMModel[]> {
     return [];
   }
+
   path(path: string): string {
     return "/api/google/" + path;
   }
