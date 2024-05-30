@@ -15,3 +15,9 @@ name = "javascript"
   [analyzers.meta]
   plugins = ["react"]
   environment = ["nodejs"]
+
+[[transformers]]
+name = "standardjs"
+
+[[transformers]]
+name = "prettier"
