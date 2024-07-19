@@ -234,7 +234,7 @@ const baiduModels = [
   "ernie-speed-128k",
   "ernie-speed-8k",
   "ernie-lite-8k",
-  "ernie-tiny-8k"
+  "ernie-tiny-8k",
 ];
 
 const bytedanceModels = [
