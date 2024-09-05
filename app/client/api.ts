@@ -222,20 +222,22 @@ export function getHeaders() {
     const apiKey = isGoogle
       ? accessStore.googleApiKey
       : isAzure
-      ? accessStore.azureApiKey
-      : isAnthropic
-      ? accessStore.anthropicApiKey
-      : isByteDance
-      ? accessStore.bytedanceApiKey
-      : isAlibaba
-      ? accessStore.alibabaApiKey
-      : isMoonshot
-      ? accessStore.moonshotApiKey
-      : isIflytek
-      ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
-        ? accessStore.iflytekApiKey + ":" + accessStore.iflytekApiSecret
-        : ""
-      : accessStore.openaiApiKey;
+        ? accessStore.azureApiKey
+        : isAnthropic
+          ? accessStore.anthropicApiKey
+          : isByteDance
+            ? accessStore.bytedanceApiKey
+            : isAlibaba
+              ? accessStore.alibabaApiKey
+              : isMoonshot
+                ? accessStore.moonshotApiKey
+                : isIflytek
+                  ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
+                    ? accessStore.iflytekApiKey +
+                      ":" +
+                      accessStore.iflytekApiSecret
+                    : ""
+                  : accessStore.openaiApiKey;
     return {
       isGoogle,
       isAzure,
